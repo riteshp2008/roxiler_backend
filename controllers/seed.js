@@ -17,7 +17,7 @@ const seed = async () => {
         description: product.description,
         price: product.price,
         dateOfSale: product.dateOfSale,
-        isSold: product.isSold,
+        isSold: product.sold,
         category: product.category,
       });
       await newProduct.save();

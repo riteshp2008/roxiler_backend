@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import seedRouter from "./routes/seed.js";
+import productRouter from "./routes/product.js";
 import connectDB from "./config/db.js";
 
 dotenv.config();
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/seed", seedRouter);
+app.use("/product", productRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
