@@ -17,7 +17,6 @@ export const listTransactions = async (req, res) => {
       $or: [
         { title: { $regex: search, $options: "i" } },
         { description: { $regex: search, $options: "i" } },
-        { price: Number(search) },
       ],
     }),
   };
@@ -102,6 +101,9 @@ export const getBarChart = async (req, res) => {
     const priceRanges = [
       { range: "0-100", min: 0, max: 100 },
       { range: "101-200", min: 101, max: 200 },
+      { range: "201-500", min: 201, max: 500 },
+      { range: "501-1000", min: 501, max: 1000 },
+      { range: "1001-2000", min: 1001, max: 2000 },
     ];
 
     const data = await Promise.all(
